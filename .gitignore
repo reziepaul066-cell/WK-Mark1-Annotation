@@ -1,0 +1,78 @@
+﻿# Datasets and local/external storage staged under the repository
+/data/
+/dataset/
+/datasets/
+**/data/
+**/dataset/
+**/datasets/
+# Image data is kept outside Git, even if placed at an unexpected path
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.bmp
+*.webp
+*.heic
+
+# Generated predictions, masks, annotations, exports, and runtime outputs
+/outputs/**
+!/outputs/.gitkeep
+/annotations/
+/predictions/
+/exports/
+/masks/
+*.jsonl
+
+# Model weights and serialized model artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.weights
+
+# Credentials, tokens, and private keys
+.env
+.env.*
+!.env.example
+*credentials*.json
+*service-account*.json
+*secret*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python environments, caches, temporary files, and logs
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local datasets and external drive mounts
+/mnt/
+/media/
+/external_data/
+
+# Large archives
+*.zip
+*.tar
+*.tar.gz
+*.7z

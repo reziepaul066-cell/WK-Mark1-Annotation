@@ -1,0 +1,9 @@
+﻿# Intended dependencies for the future Colab inference workflow.
+# This is a planning list only; no packages are installed by this scaffold.
+# Pin compatible versions after selecting and validating the Colab runtime.
+torch
+transformers
+groundingdino-py
+sam2
+opencv-python-headless
+PyYAML

@@ -1,0 +1,39 @@
+﻿# Annotation pipeline configuration (scaffold only).
+# Configure paths that are available from the current execution environment.
+# No direct external SSD or Colab mount is assumed.
+
+project:
+  name: WK-Mark1
+  dataset_root: null  # Set to an accessible image location; keep the dataset outside this repository.
+  manifest_path: null # Optional manifest of image IDs and runtime-accessible paths.
+
+runtime:
+  execution_environment: colab  # GPU-bound execution is intended for Colab.
+  device: cuda
+  batch_size: 1
+  num_workers: 0
+
+models:
+  detector:
+    adapter: grounding_dino  # Replaceable detector adapter identifier.
+    checkpoint: null          # Supply a runtime-accessible checkpoint path or model reference later.
+    text_prompt: null
+    box_threshold: 0.35
+    text_threshold: 0.25
+  segmenter:
+    adapter: sam2              # Replaceable segmenter adapter identifier.
+    checkpoint: null
+
+mask_processing:
+  enabled: false
+  # Add explicit post-processing settings when requirements are defined.
+
+outputs:
+  root: outputs
+  format: null               # Choose a CVAT-supported export format during implementation.
+  save_intermediate_masks: false
+
+cvat:
+  base_url: null
+  project_id: null
+  # Keep credentials in runtime secrets/environment variables; never store them here.
